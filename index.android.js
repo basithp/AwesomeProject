@@ -18,12 +18,13 @@ import {
 import SGListView from 'react-native-sglistview';
 import styles from './app/utils/css/hero-style';
 import ToastAndroid from './ToastAndroid';
+import codePush from "react-native-code-push";
 var deviceWidth = Dimensions.get('window').width;
 class HeroComponent extends Component {
   renderSlug(){
    if (this.props.rowID.slug) {
      return (
-       <Text style={styles.slug}>{this.props.rowID.slug}</Text>
+       <Text style={styles.slug}>{this.props.rowID.slug}+"Hi"</Text>
      );
    }
  }
@@ -104,6 +105,12 @@ export default class devdactic_react extends Component {
      dataSource: ds.cloneWithRows(data)
    };
  }
+ componentDidMount() {
+         codePush.sync({
+            updateDialog: true,
+            installMode: codePush.InstallMode.IMMEDIATE
+        });
+     }
  render() {
 
    return (
@@ -123,4 +130,6 @@ export default class devdactic_react extends Component {
     return null;
  }
  }
+let codePushOptions = { checkFrequency: codePush.CheckFrequency.ON_APP_RESUME };
+devdactic_react = codePush(codePushOptions)(devdactic_react);
 AppRegistry.registerComponent('AwesomeProject', () => devdactic_react);

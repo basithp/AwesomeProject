@@ -69,7 +69,8 @@ public class HomeActivity extends AppCompatActivity implements FeedProvider.APIF
         placeHolder.removeAllViews();
         mReactRootView = new ReactRootView(this);
         mReactInstanceManager = ReactInstanceManager.builder()
-                //.addPackage(new CodePush("nkwSKFNlShRO54HGd4hGGd2zESoCEJ8QkBAdG", HomeActivity.this, BuildConfig.DEBUG))
+                //.addPackage(new CodePush("GMtpZquafkm0_x0Ro3YRDrNg5UQrEJ8QkBAdG", HomeActivity.this, BuildConfig.DEBUG))
+                .addPackage(new CodePush("nkwSKFNlShRO54HGd4hGGd2zESoCEJ8QkBAdG", HomeActivity.this, BuildConfig.DEBUG))
                 .setApplication(getApplication())
                 .setBundleAssetName("index.android.bundle")
                 .setJSMainModuleName("index.android")
