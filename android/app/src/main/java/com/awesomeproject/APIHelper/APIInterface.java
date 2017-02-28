@@ -12,6 +12,6 @@ import retrofit2.http.GET;
 
 public interface APIInterface {
 
-    @GET("feed.json")
+    @GET("feeds-android.json")
     Call<List<FeedItem>>  getFeeds();
 }

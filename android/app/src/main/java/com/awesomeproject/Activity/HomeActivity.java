@@ -41,14 +41,6 @@ public class HomeActivity extends AppCompatActivity implements FeedProvider.APIF
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                FeedProvider.getFeedFromServer(HomeActivity.this);
-            }
-        });
-
         placeHolder = (LinearLayout) findViewById(R.id.react_placeholder);
         //swipeRefreshLayout = (SwipeRefreshLayout) findViewById(R.id.swipeRefresh);
         //swipeRefreshLayout.setOnRefreshListener(this);
